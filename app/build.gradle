@@ -17,6 +17,9 @@ repositories {
 }
 
 dependencies {
+
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.6'
+
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13'
 
@@ -29,5 +32,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'finalwork.App'
+    mainClass = 'finalwork.finalwork.ProductAccountingApplication'
 }

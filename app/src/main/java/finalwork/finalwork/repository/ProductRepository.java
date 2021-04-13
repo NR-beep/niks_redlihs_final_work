@@ -1,36 +1,38 @@
 package finalwork.finalwork.repository;
 
-import teacher.finalwork.model.Product;
+import finalwork.finalwork.model.Product;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@org.springframework.stereotype.Repository
 public class ProductRepository implements Repository<Product> {
 
     private Long idCounter = 0L;
-    private final Map<Long, Product> repository;
-
-    public ProductRepository(Map<Long, Product> repository) {
-        this.repository = repository;
-    }
+    private final Map<Long, Product> repository = new HashMap<>();
 
     @Override
-    public Long save(Product entity) {
-        return null;
+    public Long save(Product product) {
+        idCounter++;
+        product.setId(idCounter);
+        repository.put(idCounter, product);
+        return idCounter;
     }
 
     @Override
     public List<Product> findAll() {
-        return null;
+        return new ArrayList<>(repository.values());
     }
 
     @Override
     public Product findById(Long id) {
-        return null;
+        return repository.get(id);
     }
 
     @Override
     public void delete(Long id) {
-
+        repository.remove(id);
     }
 }

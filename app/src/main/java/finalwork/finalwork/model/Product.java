@@ -17,7 +17,7 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return id.equals(product.id)
+        return Objects.equals(id, product.id)
                 && name.equals(product.name)
                 && price.equals(product.price)
                 && category == product.category
@@ -25,10 +25,12 @@ public class Product {
                 && Objects.equals(description, product.description);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, price, category, discount, description);
     }
+
 
     public Long getId() {
         return id;

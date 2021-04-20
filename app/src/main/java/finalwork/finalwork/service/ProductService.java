@@ -4,7 +4,7 @@ import finalwork.finalwork.model.Product;
 import finalwork.finalwork.model.ProductCategory;
 import finalwork.finalwork.model.ProductData;
 import finalwork.finalwork.model.ProductInputData;
-import finalwork.finalwork.repository.ProductRepository;
+import finalwork.finalwork.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +15,10 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private final ProductRepository repository;
+    private final Repository<Product> repository;
 
     @Autowired
-    public ProductService(ProductRepository repository) {
+    public ProductService(Repository<Product> repository) {
         this.repository = repository;
     }
 

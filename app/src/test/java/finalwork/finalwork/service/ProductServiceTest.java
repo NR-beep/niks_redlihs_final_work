@@ -3,7 +3,7 @@ package finalwork.finalwork.service;
 import finalwork.finalwork.model.Product;
 import finalwork.finalwork.model.ProductCategory;
 import finalwork.finalwork.model.ProductInputData;
-import finalwork.finalwork.repository.ProductRepository;
+import finalwork.finalwork.repository.Repository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -12,8 +12,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 
 
@@ -24,7 +22,7 @@ public class ProductServiceTest {
     private ProductService victim;
 
     @Mock
-    private ProductRepository repositoryMock;
+    private Repository<Product> repositoryMock;
 
     @Test
     public void shouldConvertAndStoreProductData() {

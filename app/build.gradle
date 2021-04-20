@@ -18,6 +18,9 @@ repositories {
 
 dependencies {
 
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+
     implementation group: 'org.springframework', name: 'spring-context', version: '5.3.6'
 
     // Use JUnit test framework.
@@ -27,6 +30,9 @@ dependencies {
     implementation 'com.google.guava:guava:29.0-jre'
 
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.8.0'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
 
 }
 
